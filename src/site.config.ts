@@ -53,8 +53,8 @@ const config: SiteConfig = {
     // These will be used to theme the entire site along with syntax highlighting.
     // To use light-dark-auto mode, only include a light and a dark theme in that order.
     include: [
-      'github-light',
-      'github-dark',
+      'one-light',
+      'one-dark-pro',
     ],
   },
   // Social links to display in the footer.
