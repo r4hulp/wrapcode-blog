@@ -16,20 +16,23 @@ import {
 } from './src/settings-utils'
 import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic'
 import rehypeExternalLinks from 'rehype-external-links'
-import remarkDirective from 'remark-directive' /* Handle ::: directives as nodes */
+import remarkDirective from 'remark-directive'/* Handle ::: directives as nodes */
 import rehypeUnwrapImages from 'rehype-unwrap-images'
-import { remarkAdmonitions } from './src/plugins/remark-admonitions' /* Add admonitions */
-import remarkMath from 'remark-math' /* for latex math support */
-import rehypeKatex from 'rehype-katex' /* again, for latex math support */
-import remarkGemoji from './src/plugins/remark-gemoji' /* for shortcode emoji support */
-import rehypePixelated from './src/plugins/rehype-pixelated' /* Custom plugin to handle pixelated images */
+import { remarkAdmonitions } from './src/plugins/remark-admonitions'/* Add admonitions */
+import remarkMath from 'remark-math'/* for latex math support */
+import rehypeKatex from 'rehype-katex'/* again, for latex math support */
+import remarkGemoji from './src/plugins/remark-gemoji'/* for shortcode emoji support */
+import rehypePixelated from './src/plugins/rehype-pixelated'/* Custom plugin to handle pixelated images */
 import react from '@astrojs/react'
+
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   site: siteConfig.site,
   trailingSlash: 'never',
   prefetch: true,
+
   markdown: {
     remarkPlugins: [
       [remarkDescription, { maxChars: 200 }],
@@ -67,9 +70,11 @@ export default defineConfig({
       rehypeKatex,
     ],
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   integrations: [
     sitemap(),
     expressiveCode({
@@ -85,7 +90,10 @@ export default defineConfig({
     icon(),
     react(),
   ],
+
   experimental: {
     contentIntellisense: true,
   },
+
+  adapter: cloudflare(),
 })

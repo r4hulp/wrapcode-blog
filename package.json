@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.2",
     "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
@@ -54,7 +55,8 @@
     "satori-html": "^0.3.2",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
-    "unified": "^11.0.5"
+    "unified": "^11.0.5",
+    "wrangler": "^4.27.0"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
