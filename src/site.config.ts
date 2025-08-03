@@ -52,9 +52,9 @@ const config: SiteConfig = {
     // https://expressive-code.com/guides/themes/#using-bundled-themes
     // These will be used to theme the entire site along with syntax highlighting.
     // To use light-dark-auto mode, only include a light and a dark theme in that order.
-    include: [
-      'one-light',
-      'one-dark-pro',
+ include: [
+      'github-dark-high-contrast',
+      'github-light-high-contrast'
     ],
   },
   // Social links to display in the footer.
