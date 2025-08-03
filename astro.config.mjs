@@ -27,6 +27,7 @@ import react from '@astrojs/react'
 
 import cloudflare from '@astrojs/cloudflare';
 
+
 // https://astro.build/config
 export default defineConfig({
   site: siteConfig.site,
@@ -94,6 +95,4 @@ export default defineConfig({
   experimental: {
     contentIntellisense: true,
   },
-
-  adapter: cloudflare(),
 })
